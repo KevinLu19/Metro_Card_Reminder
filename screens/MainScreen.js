@@ -1,48 +1,39 @@
-import React from 'react';
-import { Text, StyleSheet, View, Image } from 'react-native';
+import React, { useState } from 'react';
+import { Text, StyleSheet, View, Image, TouchableOpacity, Alert } from 'react-native';
+
+import Style from "./Styles";
+
+function calculating_card_balance(card_balance)
+{
+    let train_fare = 2.75;
+    let sum_of_fare = card_balance - train_fare;
+
+    if (sum_of_fare < 0)
+    {
+        console.log("Insufficient funds.");
+    }
+    else
+    {
+        set_remainder_card_swipes(remainder_card_swipes - 1);
+    }
+}
 
 function MainScreen(props)
 {
+    const [card_balance, set_card_balance] = useState(0);
+    const [remainder_card_swipes, set_remainder_card_swipes] = useState(0);
+
     return (
-        <View style={styles.container}>
-            <Image source={require("../assets/MetroCard.png")} style={styles.metro_card_image}></Image>
-            <Text style={styles.card_balance}>Balance: $</Text>
-            <Text style={styles.card_swipes_left}># Swipes Left</Text>
+        <View style={Style.container}>
+            <Image source={require("../assets/MetroCard.png")} style={Style.metro_card_image}></Image>
+            <Text style={Style.card_balance}>Balance: ${card_balance}</Text>
+            <Text style={Style.card_swipes_left}>{remainder_card_swipes} Swipes Left</Text>
+
+            <TouchableOpacity style={Style.card_swiped}>
+                <Text onPress={calculating_card_balance(card_balance)}>Subtract</Text>
+            </TouchableOpacity>
         </View>
     );
 }
-
-const styles = StyleSheet.create({
-    container:
-    {
-        flex: 1,
-    },
-    metro_card_image:
-    {
-        justifyContent: "center",
-        alignItems: "center",
-        width: 300,
-        height: 400,
-        resizeMode: "contain",
-        left: "15%"
-    },
-    card_balance:
-    {
-        position: "relative",
-        top: "120%",
-        justifyContent: "center",
-        fontSize: 25,
-        textAlign: "center",
-        color: "#7e1ce3"
-    },
-    card_swipes_left:
-    {
-        position: "relative",
-        fontSize: 25,
-        textAlign: "center",
-        top: "130%",
-        color: "#0a31f5"
-    },
-})
 
 export default MainScreen;
