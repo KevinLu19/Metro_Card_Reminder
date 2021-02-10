@@ -1,10 +1,9 @@
 import React from 'react';
+import { Text } from 'react-native';
 
 function AddBalance(props) {
     return (
-        <div>
-
-        </div>
+        <Text>Add balance screen</Text>
     );
 }
 
