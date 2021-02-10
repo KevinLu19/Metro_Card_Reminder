@@ -1,10 +1,9 @@
 import React from 'react';
+import { Text } from 'react-native';
 
 function About(props) {
     return (
-        <div>
-
-        </div>
+        <Text>Inside About screen</Text>
     );
 }
 
