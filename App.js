@@ -2,7 +2,8 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
 
-import {createDrawerNavigator, DrawerContentScrollView, DrawerItem, DrawerItemList} from "@react-navigation/drawer";
+import {createDrawerNavigator} from "@react-navigation/drawer";
+import {createStackNavigator} from "@react-navigation/stack";
 import {NavigationContainer} from "@react-navigation/native";
 
 import Mainscreen from "./screens/MainScreen";
@@ -10,6 +11,7 @@ import AddBalance from "./screens/AddBalance";
 import About from "./screens/About";
 
 const Drawer = createDrawerNavigator();
+const Stack = createStackNavigator();
 
 function MyDrawer()
 {
@@ -27,7 +29,11 @@ export default function App() {
     <SafeAreaView>
       <Mainscreen />
       <NavigationContainer>
-        <MyDrawer />
+        <Stack.Navigator initialRouteName={"Home"}>
+          <Stack.Screen name="Home" children={MyDrawer} />
+          <Stack.Screen name="Add Balance" children={AddBalance} />
+          <Stack.Screen name="About" children={About} />
+        </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaView>
   );
