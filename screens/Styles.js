@@ -45,6 +45,28 @@ var Style = StyleSheet.create({
         left: "37%",
 
     },
+    add_balance_display_balance:
+    {
+        position: "relative",
+        paddingBottom: 50,
+        justifyContent: "center",
+        fontSize: 45,
+        textAlign: "center",
+        color: "#00c9ff",
+        left: "0%"
+    },
+    add_balance_text_input:
+    {
+        position: "relative",
+        fontSize: 30,
+        paddingBottom: 100
+    },
+    add_balance_save_text_button:
+    {
+        position: "relative",
+        fontSize: 25,
+        left: "50%"
+    },
 })
 
 export default Style;
