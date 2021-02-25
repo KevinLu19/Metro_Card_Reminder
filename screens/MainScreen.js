@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Text, StyleSheet, View, Image, TouchableOpacity, Alert } from 'react-native';
 
+import {Button} from "react-native-paper";
+
 import Style from "./Styles";
 
 function calculating_card_balance(card_balance)
