@@ -57,16 +57,53 @@ var Style = StyleSheet.create({
     },
     add_balance_text_input:
     {
-        position: "relative",
         fontSize: 30,
         paddingBottom: 100
     },
-    add_balance_save_text_button:
+    about_screen_text:
     {
         position: "relative",
-        fontSize: 25,
-        left: "50%"
+        textAlign: "center",
+        justifyContent: "center",
+        fontSize: 30,
+        top: "40%"
     },
+    about_screen_body_text:
+    {
+        position: "relative",
+        textAlign: "center",
+        fontSize: 20,
+        fontFamily: "monospace",
+        top: "5%",
+        paddingLeft: 15,
+        paddingRight: 15,
+        top: "10%"
+    },
+    about_screen_function:
+    {
+        position: "relative",
+        fontSize: 20,
+        paddingLeft: 17,
+        paddingRight: 15,
+        fontFamily: "monospace",
+        top: "12%"
+    },
+    about_screen_motivation:
+    {
+        position: "relative",
+        fontSize: 20,
+        textAlign: "center",
+        fontWeight: "bold",
+        top: "10%",
+    },
+    about_screen_explainiation:
+    {
+        position: "relative",
+        fontSize: 20,
+        textAlign: "center",
+        fontWeight: "bold",
+        top: "12%"
+    }
 })
 
 export default Style;

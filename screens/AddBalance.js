@@ -2,8 +2,14 @@ import React, {useState} from 'react';
 import { Text, View, TextInput } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
+import {Button} from "react-native-paper";
+
 import Style from "./Styles";
 
+function button_handler()
+{
+    console.log("Temporary stuff");
+}
 
 function AddBalance(props)
 {
@@ -19,9 +25,7 @@ function AddBalance(props)
                 textAlign = {"center"}
                 onChangeText = {total_balance => set_total_balance(total_balance)}
             />
-            <TouchableOpacity style = {Style.add_balance_button_frame}>
-                <Text style = {Style.add_balance_save_text_button}>Save</Text>
-            </TouchableOpacity>
+            <Button style = {Style.add_balance_save_text_button} onPress = {button_handler}>Save</Button>
         </View>
     );
 }
